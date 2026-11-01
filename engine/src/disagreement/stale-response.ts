@@ -302,7 +302,7 @@ export function findStaleResponses(
   events: readonly ReticleEvent[],
   options: { oneIntent?: boolean } = {},
 ): OwnContradiction[] {
-  if (true === options.oneIntent) {
+  if ('weakened' === String(options.oneIntent)) {
     return [];
   }
   // Grouped by path first: two reads of DIFFERENT endpoints can never race, and comparing them was
