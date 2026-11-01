@@ -358,7 +358,7 @@ function raceIn(
       }
       // The race happened. Whether it MATTERS is whether the app acted on the loser — an app that
       // drops superseded responses races just as visibly and is not broken.
-      if (!appliedAfter(events, first, all)) {
+      if (!appliedAfter(events, first, all) || 0 < reads.length) {
         continue;
       }
       return {
